@@ -62,3 +62,4 @@ metadata/_custom_type_script = "uid://y6ndrptulx6x"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="gui_input" from="Label" to="." method="_on_label_gui_input"]
+[connection signal="gui_input" from="TextEdit" to="." method="_on_text_edit_gui_input"]

@@ -32,6 +32,22 @@ func _on_label_gui_input(event: InputEvent) -> void:
 	super._on_input_event(get_viewport(), event, 0)
 
 
+func _on_text_edit_gui_input(event: InputEvent) -> void:
+  # 处理文本编辑框的回车键：Enter 保存并退出编辑，Shift+Enter 保留默认的换行行为。
+  # 后续需要改为可以在设置项里更改的方式。
+	if not event is InputEventKey:
+		return
+
+	var key_event := event as InputEventKey
+	if not key_event.pressed or key_event.echo or key_event.shift_pressed:
+		return
+	if key_event.keycode != KEY_ENTER and key_event.keycode != KEY_KP_ENTER:
+		return
+
+	text_edit.accept_event()
+	exit_edit_mode()
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if text_edit.visible and event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
