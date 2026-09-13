@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#478CBF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6A46B8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Rounded Square (like Godot plugin icons) -->
+  <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#bg)"/>
+  
+  <!-- Large "G" Letter (bold, centered) -->
+  <text x="16" y="23" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">G</text>
+  
+  <!-- Small "MCP" indicator at bottom -->
+  <text x="16" y="29" font-family="Arial, sans-serif" font-size="4" font-weight="bold" fill="#00D4AA" text-anchor="middle">MCP</text>
+</svg>

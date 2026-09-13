@@ -1,0 +1,156 @@
+key,source,en,zh
+get_project_info,,Get general information about the Godot project, including name, version, and description.,获取 Godot 项目的总体信息，包括名称、版本和描述。
+get_project_settings,,Get project settings. Optionally filter by a prefix.,获取项目设置。可选择按前缀过滤。
+list_project_tests,,Discover runnable project tests under the Godot project's test directories. Reports Python integration tests and GUT unit tests, including whether each test is currently runnable.,发现 Godot 项目测试目录下的可运行项目测试。报告 Python 集成测试和 GUT 单元测试，包括每个测试当前是否可运行。
+run_project_test,,Run a single project test script. Python integration tests are executed with python. GUT unit tests are executed through Godot headless when addons/gut is available.,运行单个项目测试脚本。Python 集成测试使用 python 执行。GUT 单元测试在 addons/gut 可用时通过 Godot 无头模式执行。
+run_project_tests,,Discover and run multiple project tests from a directory. Reuses the same framework filters as list_project_tests and aggregates pass/fail counts.,从目录中发现并运行多个项目测试。使用与 list_project_tests 相同的框架过滤器，并汇总通过/失败计数。
+list_project_input_actions,,List project InputMap actions stored in ProjectSettings, including serialized input events.,列出存储在 ProjectSettings 中的项目 InputMap 动作，包括序列化的输入事件。
+upsert_project_input_action,,Create or update a project InputMap action in ProjectSettings and save project.godot.,在 ProjectSettings 中创建或更新项目 InputMap 动作并保存 project.godot。
+remove_project_input_action,,Remove a project InputMap action from ProjectSettings and save project.godot.,从 ProjectSettings 中移除项目 InputMap 动作并保存 project.godot。
+list_project_autoloads,,List project autoload entries with resolved path, singleton flag, and project setting order.,列出项目自动加载条目，包括已解析的路径、单例标志和项目设置顺序。
+list_project_global_classes,,List project global script classes registered through class_name metadata.,列出通过 class_name 元数据注册的项目全局脚本类。
+get_class_api_metadata,,Get typed API metadata for an engine ClassDB class or a project global script class.,获取引擎 ClassDB 类或项目全局脚本类的类型化 API 元数据。
+inspect_csharp_project_support,,Inspect C# / Mono project support files such as .csproj and .sln, including target frameworks, assembly metadata, and references.,检查 C# / Mono 项目支持文件（如 .csproj 和 .sln），包括目标框架、程序集元数据和引用。
+compare_render_screenshots,,Compare two screenshot images and report pixel differences, RMSE, and threshold-based match status.,比较两张截图图像并报告像素差异、RMSE 和基于阈值的匹配状态。
+inspect_tileset_resource,,Inspect a TileSet resource and summarize its sources, atlas tiles, and scene tiles.,检查 TileSet 资源并汇总其来源、图集瓦片和场景瓦片。
+list_project_resources,,List all resource files in the project (.tres, .res, .png, .ogg, etc.).,列出项目中的所有资源文件（.tres、.res、.png、.ogg 等）。
+create_resource,,Create a new Godot resource file (.tres). Supports common resource types.,创建新的 Godot 资源文件（.tres）。支持常见的资源类型。
+get_project_structure,,Get project structure and file organization.,获取项目结构和文件组织。
+reimport_resources,,Reimport project resources.,重新导入项目资源。
+get_import_metadata,,Get resource import metadata.,获取资源导入元数据。
+get_resource_uid_info,,Get resource UID information.,获取资源 UID 信息。
+fix_resource_uid,,Fix resource UID issues.,修复资源 UID 问题。
+get_resource_dependencies,,Get resource dependencies.,获取资源依赖关系。
+scan_missing_resource_dependencies,,Scan for missing resource dependencies.,扫描缺失的资源依赖。
+scan_cyclic_resource_dependencies,,Scan for cyclic resource dependencies.,扫描循环资源依赖。
+detect_broken_scripts,,Detect broken scripts in the project.,检测项目中的损坏脚本。
+audit_project_health,,Audit project health and integrity.,审计项目健康和完整性。
+create_scene,,Create a new Godot scene with a root node. The scene is saved to the specified path.,创建一个新的 Godot 场景并包含根节点。场景保存到指定路径。
+save_scene,,Save the current scene to disk. If no path is provided, saves to the current scene's path.,将当前场景保存到磁盘。如果未提供路径，则保存到当前场景的路径。
+open_scene,,Open a scene file from the project. Closes the current scene if one is open.,从项目中打开场景文件。如果当前有打开的场景，则先关闭它。
+get_current_scene,,Get information about the currently open scene, including name, path, and root node type.,获取当前打开场景的信息，包括名称、路径和根节点类型。
+get_scene_structure,,Get the complete structure of the current scene as a tree. Returns node types, names, and hierarchy.,以树形结构获取当前场景的完整结构。返回节点类型、名称和层级关系。
+list_project_scenes,,List all scene files (.tscn) in the project. Returns paths relative to res://.,列出项目中所有场景文件（.tscn）。返回相对于 res:// 的路径。
+list_open_scenes,,List scene tabs currently open in the Godot editor.,列出 Godot 编辑器中当前打开的场景标签页。
+close_scene_tab,,Close the active scene tab, or activate a specified scene tab and close it.,关闭当前活动的场景标签页，或激活指定的场景标签页然后关闭它。
+create_node,,Create a new node in the Godot scene tree. Returns the node path and type.,在 Godot 场景树中创建新节点。返回节点路径和类型。
+delete_node,,Delete a node from the Godot scene tree. This operation is destructive and cannot be undone.,从 Godot 场景树中删除节点。此操作是破坏性的，无法撤销。
+update_node_property,,Update a property of a specific node. Supports common property types with automatic type conversion.,更新特定节点的属性。支持常见属性类型并自动进行类型转换。
+batch_update_node_properties,,Update multiple node properties inside one editor UndoRedo action. Useful for transaction-style scene edits that should undo in a single step.,在一个编辑器 UndoRedo 操作中更新多个节点属性。适用于需要在单步中撤销的事务式场景编辑。
+batch_scene_node_edits,,Apply multiple create/delete scene node edits inside one editor UndoRedo action so the full structure change undoes in a single step.,在单个编辑器 UndoRedo 操作中应用多个创建/删除场景节点编辑，使整个结构变更可在单步中撤销。
+get_node_properties,,Get all properties of a specific node in the scene tree.,获取场景树中特定节点的所有属性。
+list_nodes,,List all nodes in the current scene or under a specific parent node.,列出当前场景或特定父节点下的所有节点。
+get_scene_tree,,Get the complete scene tree hierarchy starting from the scene root. Returns full tree structure with node types.,获取从场景根节点开始的完整场景树层级。返回包含节点类型的完整树结构。
+duplicate_node,,Duplicate a node and its children in the scene tree. Returns the new node path.,在场景树中复制节点及其子节点。返回新节点的路径。
+move_node,,Move a node to a new parent in the scene tree. Optionally preserves global transform.,将节点移动到场景树中的新父节点下。可选择保留全局变换。
+rename_node,,Rename a node in the scene tree. The new name must be unique among siblings.,重命名场景树中的节点。新名称必须在同级节点中唯一。
+add_resource,,Add a resource child node to a target node.,向目标节点添加资源子节点。
+set_anchor_preset,,Set anchor preset for a Control node.,为 Control 节点设置锚点预设。
+connect_signal,,Connect a signal from one node to another.,将一个节点的信号连接到另一个节点。
+disconnect_signal,,Disconnect a signal from one node to another.,断开一个节点到另一个节点的信号连接。
+get_node_groups,,Get groups that a node belongs to.,获取节点所属的组。
+set_node_groups,,Set groups for a node.,设置节点所属的组。
+find_nodes_in_group,,Find all nodes in a specific group.,查找特定组中的所有节点。
+audit_scene_node_persistence,,Audit node owner and persistence state for the currently edited scene. Reports missing or invalid owner relationships that affect scene saving and inheritance.,审计当前编辑场景的节点所有者和持久化状态。报告影响场景保存和继承的缺失或无效的所有者关系。
+audit_scene_inheritance,,Audit inherited or instanced scene structure for the current scene. Classifies local nodes, instance roots, inherited instance content, and local additions inside instanced subtrees.,审计当前场景的继承或实例化场景结构。分类本地节点、实例根节点、继承的实例内容以及实例化子树中的本地添加。
+list_project_scripts,,List all GDScript files (.gd) in the project. Returns paths relative to res://.,列出项目中所有 GDScript 文件（.gd）。返回相对于 res:// 的路径。
+list_project_script_symbols,,Index script symbols across project GDScript and C# files. Returns class, extends, functions, signals, properties, and constants.,索引项目中 GDScript 和 C# 文件的脚本符号。返回类、继承、函数、信号、属性和常量。
+find_script_symbol_definition,,Find definition locations for a script symbol across GDScript and C# project files.,在 GDScript 和 C# 项目文件中查找脚本符号的定义位置。
+find_script_symbol_references,,Find textual project references to a script symbol across GDScript, C#, and scene files.,在 GDScript、C# 和场景文件中查找脚本符号的文本引用。
+rename_script_symbol,,Rename a script symbol across project files using identifier-boundary text replacements. Supports dry-run previews before applying changes.,使用标识符边界文本替换在项目文件中重命名脚本符号。支持在应用更改前进行试运行预览。
+read_script,,Read the content of a GDScript file (.gd). Returns the complete script source code.,读取 GDScript 文件（.gd）的内容。返回完整的脚本源代码。
+create_script,,Create a new GDScript file with optional template. GDScript files are complete programs, not resource files.,创建新的 GDScript 文件，可选模板。GDScript 文件是完整程序，不是资源文件。
+modify_script,,Modify the content of an existing GDScript file. Can replace entire content or specific lines.,修改现有 GDScript 文件的内容。可以替换整个内容或特定行。
+analyze_script,,Analyze a GDScript file and report code quality issues.,分析 GDScript 文件并报告代码质量问题。
+get_current_script,,Get the currently edited script in the Godot editor.,获取 Godot 编辑器中当前正在编辑的脚本。
+open_script_at_line,,Open a script file at a specific line number in the Godot editor.,在 Godot 编辑器中的指定行号打开脚本文件。
+attach_script,,Attach a script to a node.,将脚本附加到节点。
+validate_script,,Validate a script file for syntax errors.,验证脚本文件的语法错误。
+search_in_files,,Search for text in project files.,在项目文件中搜索文本。
+get_editor_logs,,Get recent log messages from the editor or runtime. Supports filtering by source, type, and pagination.,获取编辑器或运行时的最近日志消息。支持按来源、类型和分页过滤。
+execute_script,,Execute a script in the editor context.,在编辑器上下文中执行脚本。
+get_performance_metrics,,Get performance metrics from the editor or running game.,从编辑器或运行中的游戏获取性能指标。
+debug_print,,Print debug messages to the editor console.,向编辑器控制台输出调试消息。
+execute_editor_script,,Execute a script in the editor with access to editor APIs.,在编辑器中执行脚本，可访问编辑器 API。
+clear_output,,Clear the editor output panel.,清除编辑器输出面板。
+get_debugger_sessions,,List Godot editor debugger sessions and their active/break state.,列出 Godot 编辑器调试器会话及其活动/断点状态。
+get_debug_threads,,Return DAP-style debugger threads visible from the active Godot debug session.,从活动的 Godot 调试会话返回 DAP 风格的调试器线程。
+set_debugger_breakpoint,,Enable or disable a breakpoint in active Godot debugger sessions.,在活动的 Godot 调试器会话中启用或禁用断点。
+send_debugger_message,,Send a custom debugger message to active Godot debugger sessions.,向活动的 Godot 调试器会话发送自定义调试器消息。
+toggle_debugger_profiler,,Toggle an EngineProfiler in active Godot debugger sessions.,在活动的 Godot 调试器会话中切换引擎性能分析器。
+get_debugger_messages,,Read custom messages captured by the Godot debugger bridge.,读取由 Godot 调试器桥捕获的自定义消息。
+get_debug_state_events,,Read recorded debugger break/resume/stop state transitions from the bridge.,从桥读取记录的调试器断点/恢复/停止状态转换。
+get_debug_output,,Read categorized runtime debugger output captured by the editor bridge.,读取由编辑器桥捕获的分类运行时调试器输出。
+add_debugger_capture_prefix,,Allow the debugger bridge to capture custom EngineDebugger messages with the given prefix.,允许调试器桥捕获具有给定前缀的自定义 EngineDebugger 消息。
+get_debug_stack_frames,,Return the latest captured script stack frames and request a fresh stack dump from breaked sessions.,返回最新捕获的脚本堆栈帧，并从已断点的会话请求新的堆栈转储。
+get_debug_stack_variables,,Return latest captured local/member/global variables for a stack frame and request a fresh variable dump.,返回堆栈帧的最新捕获的局部/成员/全局变量，并请求新的变量转储。
+get_debug_scopes,,Group latest captured stack variables into DAP-like scopes for a frame.,将最新捕获的堆栈变量分组为帧的 DAP 风格作用域。
+get_debug_variables,,Resolve a DAP-style variablesReference into child variables, with optional pagination for large arrays and dictionaries.,将 DAP 风格的 variablesReference 解析为子变量，可选择对大数组和字典进行分页。
+expand_debug_variable,,Expand a captured debug variable or evaluated expression value by scope and path, with pagination for arrays and dictionaries.,按作用域和路径展开捕获的调试变量或求值的表达式值，支持数组和字典的分页。
+evaluate_debug_expression,,Evaluate an expression in the paused script debugger context for a given frame.,在给定帧的暂停脚本调试器上下文中求值表达式。
+install_runtime_probe,,Install a runtime probe for debugging.,安装用于调试的运行时探针。
+remove_runtime_probe,,Remove a runtime probe.,移除运行时探针。
+request_debug_break,,Request the debugger to break at the current execution point.,请求调试器在当前执行点断点。
+send_debug_command,,Send a command to the debugger.,向调试器发送命令。
+debug_step_into,,Step into the next function call in the debugger.,在调试器中步入下一个函数调用。
+debug_step_over,,Step over the next line in the debugger.,在调试器中步过下一行。
+debug_step_out,,Step out of the current function in the debugger.,在调试器中步出当前函数。
+debug_continue,,Continue execution in the debugger.,在调试器中继续执行。
+debug_step_into_and_wait,,Step into and wait for the debugger to pause.,步入并等待调试器暂停。
+debug_step_over_and_wait,,Step over and wait for the debugger to pause.,步过并等待调试器暂停。
+debug_step_out_and_wait,,Step out and wait for the debugger to pause.,步出并等待调试器暂停。
+debug_continue_and_wait,,Continue and wait for the debugger to pause or complete.,继续执行并等待调试器暂停或完成。
+await_debugger_state,,Wait for a specific debugger state.,等待特定的调试器状态。
+get_runtime_info,,Get runtime information about the running game.,获取运行中游戏的运行时信息。
+await_scene_ready,,Poll the runtime until the specified scene is loaded and ready.,轮询运行时直到指定场景加载就绪。
+get_runtime_performance_snapshot,,Get a performance snapshot from the running game.,从运行中的游戏获取性能快照。
+get_runtime_memory_trend,,Get memory usage trends from the running game.,从运行中的游戏获取内存使用趋势。
+get_runtime_scene_tree,,Get the scene tree from the running game.,从运行中的游戏获取场景树。
+inspect_runtime_node,,Inspect a node in the running game.,检查运行中游戏中的节点。
+create_runtime_node,,Create a node in the running game.,在运行中的游戏中创建节点。
+delete_runtime_node,,Delete a node in the running game.,在运行中的游戏中删除节点。
+update_runtime_node_property,,Update a node property in the running game.,更新运行中游戏中的节点属性。
+call_runtime_node_method,,Call a method on a node in the running game.,调用运行中游戏中节点的方法。
+evaluate_runtime_expression,,Evaluate an expression in the running game context.,在运行中的游戏上下文中求值表达式。
+simulate_runtime_input_event,,Simulate an input event in the running game.,在运行中的游戏中模拟输入事件。
+simulate_runtime_input_action,,Simulate an input action in the running game.,在运行中的游戏中模拟输入动作。
+list_runtime_input_actions,,List input actions available in the running game.,列出运行中游戏中可用的输入动作。
+upsert_runtime_input_action,,Create or update an input action in the running game.,在运行中的游戏中创建或更新输入动作。
+remove_runtime_input_action,,Remove an input action from the running game.,从运行中的游戏中移除输入动作。
+list_runtime_animations,,List animations available in the running game.,列出运行中游戏中可用的动画。
+play_runtime_animation,,Play an animation in the running game.,播放运行中游戏中的动画。
+stop_runtime_animation,,Stop an animation in the running game.,停止运行中游戏中的动画。
+get_runtime_animation_state,,Get the state of an animation in the running game.,获取运行中游戏中动画的状态。
+get_runtime_animation_tree_state,,Get the state of an animation tree in the running game.,获取运行中游戏中动画树的状态。
+set_runtime_animation_tree_active,,Set an animation tree active/inactive in the running game.,设置运行中游戏中动画树的活动/非活动状态。
+travel_runtime_animation_tree,,Travel to a new state in an animation tree in the running game.,在运行中游戏中导航到动画树的新状态。
+get_runtime_material_state,,Get the state of a material in the running game.,获取运行中游戏中材质的状态。
+get_runtime_theme_item,,Get a theme item in the running game.,获取运行中游戏中的主题项。
+set_runtime_theme_override,,Set a theme override in the running game.,在运行中的游戏中设置主题覆盖。
+clear_runtime_theme_override,,Clear a theme override in the running game.,在运行中的游戏中清除主题覆盖。
+get_runtime_shader_parameters,,Get shader parameters in the running game.,获取运行中游戏中的着色器参数。
+set_runtime_shader_parameter,,Set a shader parameter in the running game.,设置运行中游戏中的着色器参数。
+list_runtime_tilemap_layers,,List TileMap layers in the running game.,列出运行中游戏中的 TileMap 图层。
+get_runtime_tilemap_cell,,Get a TileMap cell in the running game.,获取运行中游戏中的 TileMap 单元格。
+set_runtime_tilemap_cell,,Set a TileMap cell in the running game.,设置运行中游戏中的 TileMap 单元格。
+list_runtime_audio_buses,,List audio buses in the running game.,列出运行中游戏中的音频总线。
+get_runtime_audio_bus,,Get an audio bus in the running game.,获取运行中游戏中的音频总线。
+update_runtime_audio_bus,,Update an audio bus in the running game.,更新运行中游戏中的音频总线。
+get_runtime_screenshot,,Take a screenshot of the running game.,截取运行中游戏的屏幕截图。
+await_runtime_condition,,Wait for a condition to be true in the running game.,在运行中游戏中等待条件为真。
+assert_runtime_condition,,Assert a condition in the running game.,在运行中游戏中断言一个条件。
+get_editor_state,,Get the current state of the Godot editor, including active scene and selection info.,获取 Godot 编辑器的当前状态，包括活动场景和选择信息。
+run_project,,Run the current project or a specific scene. Launches the game in play mode.,运行当前项目或指定场景。以运行模式启动游戏。
+stop_project,,Stop the currently running project and return to editor mode.,停止当前正在运行的项目并返回编辑器模式。
+get_selected_nodes,,Get the list of currently selected nodes in the editor.,获取编辑器中当前选中节点的列表。
+select_node,,Select a node in the current edited scene and focus it in the Inspector.,在当前编辑的场景中选择一个节点并在检查器中聚焦它。
+select_file,,Select a project file in the Godot FileSystem dock.,在 Godot 文件系统面板中选择一个项目文件。
+get_inspector_properties,,Inspect a node or resource and return property metadata and serialized values similar to the Inspector.,检查节点或资源并返回与检查器类似的属性元数据和序列化值。
+set_editor_setting,,Set an editor setting value. Requires editor restart for some settings to take effect.,设置编辑器设置值。某些设置需要重启编辑器才能生效。
+get_editor_screenshot,,Capture a screenshot of the editor viewport and save it to a file.,截取编辑器视口的屏幕截图并保存到文件。
+get_signals,,Get all signals and their connections for a node.,获取节点的所有信号及其连接。
+reload_project,,Rescan the project filesystem and reload scripts. Useful after external file changes.,重新扫描项目文件系统并重新加载脚本。适用于外部文件更改后。
+list_export_presets,,List export presets from export_presets.cfg.,列出 export_presets.cfg 中的导出预设。
+inspect_export_templates,,Inspect locally installed Godot export templates for the current editor version.,检查本地安装的适用于当前编辑器版本的 Godot 导出模板。
+validate_export_preset,,Validate an export preset against export_presets.cfg and local template availability.,根据 export_presets.cfg 和本地模板可用性验证导出预设。
+run_export,,Run a Godot CLI export for a configured preset.,为配置的预设运行 Godot CLI 导出。
