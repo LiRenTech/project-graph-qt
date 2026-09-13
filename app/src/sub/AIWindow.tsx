@@ -946,7 +946,7 @@ function MessageBubble({
             <div
               key={bubbleIndex}
               className={cn(
-                "flex cursor-text flex-col gap-2 rounded-2xl px-3 py-2 text-sm select-text",
+                "flex max-w-full min-w-0 cursor-text flex-col gap-2 rounded-2xl px-3 py-2 text-sm select-text",
                 isUser
                   ? "bg-accent text-accent-foreground rounded-br-md"
                   : "bg-card border-border/70 rounded-bl-md border shadow-sm",
@@ -965,6 +965,7 @@ function MessageBubble({
                 ))
               ) : (
                 <Streamdown
+                  className="pg-ai-markdown"
                   plugins={{ code }}
                   components={components}
                   animated={!isUser}
@@ -979,13 +980,14 @@ function MessageBubble({
         ) : (
           <div
             className={cn(
-              "cursor-text rounded-2xl px-3 py-2 text-sm select-text",
+              "max-w-full min-w-0 cursor-text rounded-2xl px-3 py-2 text-sm select-text",
               isUser
                 ? "bg-accent text-accent-foreground rounded-br-md"
                 : "bg-card border-border/70 rounded-bl-md border shadow-sm",
             )}
           >
             <Streamdown
+              className="pg-ai-markdown"
               plugins={{ code }}
               components={components}
               animated={!isUser}
@@ -1052,6 +1054,7 @@ function MessagePart({
   if (part.type === "text") {
     return (
       <Streamdown
+        className="pg-ai-markdown"
         plugins={{ code }}
         components={components}
         animated={isAnimating}
@@ -1063,15 +1066,47 @@ function MessagePart({
     );
   }
   if (part.type === "reasoning") {
-    return (
-      <div className="text-muted-foreground border-l-2 pl-2 text-xs leading-relaxed">{part.text ?? part.reasoning}</div>
-    );
+    return <ReasoningPart part={part} />;
   }
   if (isAIToolPart(part)) {
     return <ToolPart part={part} onToolApproval={onToolApproval} />;
   }
   return (
     <pre className="text-muted-foreground overflow-auto text-xs">unknown part: {JSON.stringify(part, null, 2)}</pre>
+  );
+}
+
+function ReasoningPart({ part }: { part: any }) {
+  const streaming = part.state === "streaming";
+  const [open, setOpen] = useState(streaming);
+  const userToggled = useRef(false);
+  const wasStreaming = useRef(streaming);
+
+  useEffect(() => {
+    // 只在流式结束后自动收起一次，用户手动展开过就不再干预
+    if (wasStreaming.current && !streaming && !userToggled.current) setOpen(false);
+    wasStreaming.current = streaming;
+  }, [streaming]);
+
+  return (
+    <Collapsible
+      open={open}
+      onOpenChange={(next) => {
+        userToggled.current = true;
+        setOpen(next);
+      }}
+      className="group/reasoning min-w-0 self-stretch"
+    >
+      <CollapsibleTrigger className="text-muted-foreground hover:text-foreground flex cursor-pointer items-center gap-1.5 text-xs">
+        <ChevronRight className="size-3 shrink-0 transition-transform group-data-[state=open]/reasoning:rotate-90" />
+        <span>{streaming ? "思考中" : "思考过程"}</span>
+      </CollapsibleTrigger>
+      <CollapsibleContent className="animate-none!">
+        <div className="text-muted-foreground mt-1.5 border-l-2 pl-2 text-xs leading-relaxed wrap-anywhere whitespace-pre-wrap">
+          {part.text ?? part.reasoning ?? ""}
+        </div>
+      </CollapsibleContent>
+    </Collapsible>
   );
 }
 
@@ -1099,7 +1134,7 @@ function ToolPart({
         <ChevronRight className="size-3 transition-transform group-data-[state=open]/collapsible:rotate-90" />
       </CollapsibleTrigger>
       <CollapsibleContent className="bg-muted/60 mt-2 animate-none! rounded-lg px-3 py-2">
-        <Streamdown plugins={{ code }}>
+        <Streamdown className="pg-ai-markdown" plugins={{ code }}>
           {`\`\`\`json\n${JSON.stringify({ input: part.input, output: part.output, error: part.errorText }, null, 2)}\n\`\`\``}
         </Streamdown>
       </CollapsibleContent>
