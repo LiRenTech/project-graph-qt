@@ -34,6 +34,17 @@
   [data-radix-popper-content-wrapper]:has([data-slot="tooltip-content"]) {
     transform: none !important;
   }
+  /* AI 消息的 markdown 正文：长路径、长 URL、长 hash 没有断词机会，会顶开气泡导致右侧被裁 */
+  .pg-ai-markdown {
+    overflow-wrap: anywhere;
+  }
+  .pg-ai-markdown pre,
+  .pg-ai-markdown code {
+    overflow-wrap: normal;
+  }
+  .pg-ai-markdown pre {
+    overflow-x: auto;
+  }
 }
 
 @theme inline {
