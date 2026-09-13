@@ -1,0 +1,3 @@
+interface:
+  display_name: "Create Association"
+  short_description: "Create a persistent Project Graph relationship"

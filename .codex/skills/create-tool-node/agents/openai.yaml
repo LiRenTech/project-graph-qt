@@ -1,0 +1,3 @@
+interface:
+  display_name: "Create Tool Node"
+  short_description: "Create a Project Graph stage tool"
