@@ -15,11 +15,19 @@ run/main_scene="uid://dpglridd8c5go"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://bxfj8cpdlgdoa"
 
+[autoload]
+
+MCPRuntimeProbe="*uid://bsg12huaf1u5i"
+
 [display]
 
 window/size/transparent=true
 window/stretch/aspect="expand"
 window/per_pixel_transparency/allowed=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
 
 [gui]
 
